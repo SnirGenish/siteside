@@ -9,15 +9,21 @@ const NavLanding = ({ data }) => {
       className="row spaceBetween alignCenter"
       id="NavLanding"
     >
-      <LandingLogo LogoData={data.logo} colorData={data.color} />
+      <Link to={`/${data.username}/${data.title}/home`}>
+        <LandingLogo LogoData={data.logo} colorData={data.color} />
+      </Link>
       <ul style={{ color: data.color[0] }} id="NavLandingUl" className="row">
-        <Link to={`/${data.siteInfo.userName}/${data.siteInfo.title}/about`}>
+        <Link
+          style={{ color: data.color[0] }}
+          to={`/${data.username}/${data.title}/about`}
+        >
           <li>About</li>
         </Link>
         <Link
-          to={`/${data.siteInfo.userName}/${data.siteInfo.title}/contectUs`}
+          style={{ color: data.color[0] }}
+          to={`/${data.username}/${data.title}/contactUs`}
         >
-          <li>Contect us</li>
+          <li>Contact us</li>
         </Link>
       </ul>
       <div className="cont">
